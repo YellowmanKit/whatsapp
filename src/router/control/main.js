@@ -15,6 +15,10 @@ export const router = (app, db) =>{
   app.post('/twilio/received/', (req, res) => {
     console.log('message received')
     console.log(req.body)
+    twilio({
+      message: 'message received: ' + req.body.Body + ' from ' + req.body.From,
+      number: '+85267328959'
+    })
     return res.json({ status: 'message received' })
   })
 
