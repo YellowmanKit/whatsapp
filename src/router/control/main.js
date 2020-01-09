@@ -12,12 +12,14 @@ export const router = (app, db) =>{
     return res.json({ status: 'ok' })
   })
 
-  app.get('/twilio/received/', (req, res) => {
+  app.post('/twilio/received/', (req, res) => {
+    console.log('message received')
     console.log(req.body)
     return res.json({ status: 'message received' })
   })
 
-  app.get('/twilio/status/', (req, res) => {
+  app.post('/twilio/status/', (req, res) => {
+    console.log('status update')
     console.log(req.body)
     return res.json({ status: 'status received' })
   })
